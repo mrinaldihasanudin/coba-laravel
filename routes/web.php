@@ -28,7 +28,8 @@ Route::get('/', function () {
         "name" => "M Rinaldi Hasanudin",
         "email" => "mrinaldihasanudin@gmail.com",
         "image" => "frontend/images/avatar-1.png",
-        "title" => "Home"
+        "title"=>'Home',
+        "active" => "home"
     ]);
 });
 
@@ -37,8 +38,9 @@ Route::get('/about', function () {
     return view('about', [
         "name" => "M Rinaldi Hasanudin",
         "email" => "mrinaldihasanudin@gmail.com",
-        "image" => "frontend/images/avatar-1.png",
-        "title" => "About"
+        "image" => "https://source.unsplash.com/400x400/?nature,water",
+        "title"=>'about',
+        "active" => "about"
     ]);
 });
 

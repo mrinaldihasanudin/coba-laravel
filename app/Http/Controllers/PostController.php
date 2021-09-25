@@ -11,38 +11,42 @@ class PostController extends Controller
     public function index()
     {
         return view('posts', [
-            "title" => "Blog",
-            "posts" => Post::latest()->get()
+            "title" => 'All Posts',
+            "posts" => Post::latest()->get(),
             // "posts" => Post::all()
+            "active" => 'posts'
         ]);
     }
 
     public function show(Post $post)
     {
         return view('post', [
-            "title" => "Single Post", "post" => $post
+            "title" => "Single Post", "post" => $post,
+            "active" => 'posts'
         ]);
     }
     
     public function category(Category $category) {
-        return view('category',[
-            'title' => $category->name,
-            'posts' => $category->posts,
-            'name_category' => $category->name
+        return view('posts',[
+            'title' => "Post By Category :  $category->name",
+            'posts' => $category->posts->load(['category','author']),
+            "active" => 'category'
         ]);
     }
 
     public function categories(){
         return view('categories',[
         'title' => 'Categories',
-        'categories' => Category::all()
+        'categories' => Category::all(),
+        "active" => 'categories'
         ]);
     }
 
     public function authors(User $author){
         return view('posts',[
-        'title' => 'User Post',
-        'posts' => $author->posts
+        'title' => "Post By Author : $author->name ",
+        'posts' =>  $author->posts->load(['category','author']),
+        "active" => 'categories'
         ]);
     }
 }
