@@ -9,7 +9,7 @@
                     </h1>
                     <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}?" class="card-img-top" alt="{{ $post->category->name }}" class="img-fluid">
                     <p class="mt-3">
-                    By. <a href="/authors/{{ $post->author->username }}" class="text-decoration-none">{{ $post->author->name }}</a> In <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none">{{ $post->category->name }}</a>
+                    By. <a href="/posts?author={{ $post->author->username }}" class="text-decoration-none">{{ $post->author->name }}</a> In <a href="/posts?category={{ $post->category->slug }}" class="text-decoration-none">{{ $post->category->name }}</a>
                     </p>
                     <article class="my-3 fs-5 text-justify">
                     <p>
