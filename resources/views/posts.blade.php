@@ -26,7 +26,7 @@
                 <img src="https://source.unsplash.com/1200x400?{{ $posts[0]->category->name }}?" class="card-img-top" alt="{{ $posts[0]->category->name }}">
                 <div class="card-body">
                   <h5 class="card-title"><a href="/posts?author={{ $posts[0]->slug }}" class="text-decoration-none">{{ $posts[0]->title }}</a></h5>
-                  <p><small class="text-muted">
+                  <p><small class="text-muted"> 
                     By. <a href="/posts?author={{ $posts[0]->author->username }}" class="text-decoration-none">{{ $posts[0]->author->name }}</a> In <a href="/posts?category={{ $posts[0]->category->slug }} " class="text-decoration-none">{{ $posts[0]->category->name }}</a>
                     <span> &nbsp; {{ $posts[0]->created_at->diffForHumans() }}</span>
                     </small>

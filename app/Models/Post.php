@@ -29,8 +29,9 @@ class Post extends Model
         //     ->orWhere('excerpt','like','%'.$search.'%');
         // });
 
+
         $query->when($filters['category'] ?? false,function($query,$category){
-            return $query->wherehas('category', function ($query)use ($category){
+            return $query->wherehas('category', function ($query) use ($category){
                 $query->where('slug', $category);
             });
         });

@@ -17,10 +17,15 @@ class User extends Authenticatable
      *
      * @var string[]
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
+    // protected $fillable = [
+    //     'name',
+    //     'username',
+    //     'email',
+    //     'password',
+    // ]; di ganti biar gk isi fieldnya lagi
+
+    protected $guarded = [
+        'id'
     ];
 
     /**
