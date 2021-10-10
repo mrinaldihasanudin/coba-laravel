@@ -3,6 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/trix.css') }}">
+    <script type="text/javascript" src="{{ asset('/js/trix.js') }}"></script>
+    <style>
+      trix-toolbar [data-trix-button-group='file-tools']{
+        display: none;
+      }
+    </style>
     <title>PC2P | Dashboard</title>
 
     <!-- Bootstrap core CSS -->
